@@ -1,12 +1,12 @@
-// Amazon Location Service resource names:
+
 const mapName = "explore.map";
 const placesName = "explore.place";
 const region = "your_region";
 const apiKey = "v1.public.a1b2c3d4...
 
-// Initialize a map
+
 async function initializeMap() {
-  // Initialize the map
+ 
   const mlglMap = new maplibregl.Map({
     container: "map", // HTML element ID of map element
     center: [-77.03674, 38.891602], // Initial map centerpoint
@@ -14,7 +14,7 @@ async function initializeMap() {
     style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`, // Defines the appearance of the map and authenticates using an API key
   });
 
-  // Add navigation control to the top left of the map
+  
   mlglMap.addControl(new maplibregl.NavigationControl(), "top-left");
 
   return mlglMap;
