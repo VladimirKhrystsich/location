@@ -1,12 +1,12 @@
+// Amazon Location Service resource names:
+const mapName = "best-map.map";
+const placesName = "explore.map.Esri";
+const region = "eu-north-1";
+const apiKey = "v1.public.eyJqdGkiOiI1MGI4ZjM5My01N2IzLTRlYTEtYWQ2MS0zMDI2NGZjM2MyYmMifT1nsKpKdOpGxB1W8p-XA20vnzJFBiC9JoSDKlQBjPlvsK6M62UQ1upg-bC66KAp3C8z8KyarjohIB9iF891nR9lNSaXGOW1o7nEbs1l-0tOpmc-kyK1OwxPUsdOlSmWRnSkwtJ9cszmnF1YTnw1Dt3yuIEKJXN7Rt_8XCRJxCzzXHBOBuPhZ7Ud7Mysb3cA1ceCOtcrJzGYpvVa6YYelD20YXbwPv4Cdgq5NBsiCARzG5N_JXBloc4klUhC80BAWIMJehqcCDhEv0qv3TqRouM8pCOO3HEJb0U0TIRbhFPrwYl4O7nz6QW24Tgk3qwEOJ5Ox5UMNyBuKbeyqeXUDCg.N2IyNTQ2ODQtOWE1YS00MmI2LTkyOTItMGJlNGMxODU1Mzc2";
 
-const mapName = "explore.map";
-const placesName = "explore.place";
-const region = "your_region";
-const apiKey = "v1.public.a1b2c3d4...
-
-
+// Initialize a map
 async function initializeMap() {
- 
+  // Initialize the map
   const mlglMap = new maplibregl.Map({
     container: "map", // HTML element ID of map element
     center: [-77.03674, 38.891602], // Initial map centerpoint
@@ -14,7 +14,7 @@ async function initializeMap() {
     style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`, // Defines the appearance of the map and authenticates using an API key
   });
 
-  
+  // Add navigation control to the top left of the map
   mlglMap.addControl(new maplibregl.NavigationControl(), "top-left");
 
   return mlglMap;
@@ -72,6 +72,9 @@ async function main() {
       alert("There was an error searching.");
     }
   });
+}
+
+main();
 }
 
 main();
